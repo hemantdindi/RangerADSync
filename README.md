@@ -1,2 +1,2 @@
 # RangerADSync
-Ranger AD Sync test
+Ranger AD Sync
