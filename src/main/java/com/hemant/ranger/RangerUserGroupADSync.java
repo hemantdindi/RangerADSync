@@ -1,14 +1,23 @@
 package com.hemant.ranger;
+
 import com.hemant.ranger.ADVerification_Ranger;
+
+
+
 public class RangerUserGroupADSync {
-	  
-	//String accountName = "EEDC_HDP_app-as-elsk"; //"EEDC_HDP_o_produsr01";
 	
 	public static void main(String[] args) {
 
 		// TODO Auto-generated method stub
 		
-		System.out.println("Format accepted : users=[\"user1\",\"user2\"] groups=[\"group1\",\"group2\"] ");		
+		/*---------------------------------------------------------------------------------------------------------------------------------*/
+		ReadProperties conf = new ReadProperties();
+		System.out.println(conf.toString());
+		
+		/*---------------------------------------------------------------------------------------------------------------------------------*/
+		
+		System.out.println("Format accepted : users=[\"user1\",\"user2\"] groups=[\"group1\",\"group2\"] ");
+		
 		if(args.length == 0 || args.length > 2) {
 			System.out.println("User and Groups not specified in required format.\nExiting sync process...!");
 			System.exit(-1);
@@ -41,9 +50,9 @@ public class RangerUserGroupADSync {
 		ADVerification_Ranger adRanger = new ADVerification_Ranger();
 		 
 		 try {
-			adRanger.createADConn();
+			//adRanger.createADConn(conf);
 			
-			//Verify and add users			
+			/*Verify and add users			
 			for (String user: users[1].split(",")) {
 				if (adRanger.SearchUser(user.toString())){
 					System.out.println("User Present : " + user.toString());
@@ -65,8 +74,9 @@ public class RangerUserGroupADSync {
 					System.out.println("Group not Present : " + group.toString());
 				}
 		      }
-			
+			*/
 			adRanger.closeADConn();
+			 
 		}catch(Exception e){}
 				
 

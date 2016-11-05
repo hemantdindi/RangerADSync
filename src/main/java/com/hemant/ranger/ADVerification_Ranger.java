@@ -1,4 +1,5 @@
 package com.hemant.ranger;
+
 import java.util.Hashtable;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
@@ -8,30 +9,31 @@ import javax.naming.directory.SearchResult;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 
-class ADVerification_Ranger
+public class ADVerification_Ranger
 {
 	DirContext ldapContext;
-	
-	public void createADConn(){
-		connect2AD();
-	}
+    //Specify the Base for the search
+    String searchBase = "";
+    
 	public void closeADConn()
 	{
 		try{
 			ldapContext.close();
 		}catch(Exception e){}
 	}
-	public void connect2AD(){
+	public void createADConn(ReadProperties conf){
 		try{
 		      Hashtable<String, String> ldapEnv = new Hashtable<String, String>(11);
-		      ldapEnv.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
-		      ldapEnv.put(Context.PROVIDER_URL,  "");
-		      ldapEnv.put(Context.SECURITY_AUTHENTICATION, "simple");
-		      ldapEnv.put(Context.SECURITY_PRINCIPAL, "");
-		      ldapEnv.put(Context.SECURITY_CREDENTIALS, "");
-		      //ldapEnv.put(Context.SECURITY_PROTOCOL, "ssl");
-		      ldapEnv.put(Context.SECURITY_PROTOCOL, "simple");
+		      ldapEnv.put(Context.INITIAL_CONTEXT_FACTORY, conf.getINITIAL_CONTEXT_FACTORY());
+		      ldapEnv.put(Context.PROVIDER_URL,  conf.getPROVIDER_URL());
+		      ldapEnv.put(Context.SECURITY_AUTHENTICATION, conf.getSECURITY_AUTHENTICATION());
+		      ldapEnv.put(Context.SECURITY_PRINCIPAL, conf.getSECURITY_PRINCIPAL());
+		      ldapEnv.put(Context.SECURITY_CREDENTIALS, conf.getSECURITY_PRINCIPAL());
+		      ldapEnv.put(Context.SECURITY_PROTOCOL, conf.getSECURITY_PROTOCOL());
+		      searchBase=conf.getSEARCH_BASE();
+		      
 		      ldapContext = new InitialDirContext(ldapEnv);
+		      System.out.println("Successfully conneted to AD");
 			
 		}catch (Exception e)
 	    {
@@ -54,8 +56,7 @@ class ADVerification_Ranger
       //specify the LDAP search filter
       //String searchFilter = "(&(objectClass=group)(sAMAccountName=" + accountName + "))";      
       String searchFilter = "(&(objectClass=user)(sAMAccountName=" + accountName + "))";
-      //Specify the Base for the search
-      String searchBase = "ou=HDP,ou=EEDC,dc=emea,dc=corpdir,dc=net";
+
       //initialize counter to total the results
       int totalResults = 0;
       // Search for objects using the filter
