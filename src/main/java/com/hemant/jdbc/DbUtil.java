@@ -24,8 +24,16 @@ public class DbUtil {
                 System.out.println("Successfully conneted to Ranger DB");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
+                System.out.println("Class Error while establishing Ranger DB Connection");
+                System.exit(-1);
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println("SQL Error while establishing Ranger DB Connection");
+                System.exit(-1);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Error while establishing Ranger DB Connection");
+                System.exit(-1);
             } 
             return connection;        
     }

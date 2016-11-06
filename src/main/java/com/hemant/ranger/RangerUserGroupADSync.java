@@ -1,25 +1,25 @@
 package com.hemant.ranger;
 
 import java.sql.Connection;
-import com.hemant.jdbc.DbUtil;
+
 import com.hemant.conf.ReadProperties;
 import com.hemant.jdbc.DbUtil;
-import com.hemant.ranger.ADVerification_Ranger;
-
-
 
 public class RangerUserGroupADSync {
 	
 	public static void main(String[] args) {
 
 		// TODO Auto-generated method stub
-		@SuppressWarnings("unused")
 		Connection connection = null;
 		/*---------------------------------------------------------------------------------------------------------------------------------*/
 		ReadProperties conf = new ReadProperties();
 		DbUtil db_obj = new DbUtil();
 		System.out.println(conf.toString());
 		connection = db_obj.getConnection(conf);
+		if(connection == null){
+			System.out.println("Unknown error while establishing connection to Ranger DB");
+			System.exit(-1);
+		}
 		/*---------------------------------------------------------------------------------------------------------------------------------*/
 		
 		System.out.println("Format accepted : users=[\"user1\",\"user2\"] groups=[\"group1\",\"group2\"] ");
