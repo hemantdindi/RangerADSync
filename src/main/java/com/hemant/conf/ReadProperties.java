@@ -1,4 +1,4 @@
-package com.hemant.ranger;
+package com.hemant.conf;
 
 import java.io.InputStream;
 import java.util.Properties;

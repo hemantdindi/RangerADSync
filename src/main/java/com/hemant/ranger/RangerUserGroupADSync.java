@@ -1,5 +1,6 @@
 package com.hemant.ranger;
 
+import com.hemant.conf.ReadProperties;
 import com.hemant.ranger.ADVerification_Ranger;
 
 
