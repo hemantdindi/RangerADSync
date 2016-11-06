@@ -26,14 +26,14 @@ public class ADVerification_Ranger
 	}
 	public void createADConn(ReadProperties conf){
 		try{
-		      Hashtable<String, String> ldapEnv = new Hashtable<String, String>(11);
-		      ldapEnv.put(Context.INITIAL_CONTEXT_FACTORY, conf.getINITIAL_CONTEXT_FACTORY());
-		      ldapEnv.put(Context.PROVIDER_URL,  conf.getPROVIDER_URL());
-		      ldapEnv.put(Context.SECURITY_AUTHENTICATION, conf.getSECURITY_AUTHENTICATION());
-		      ldapEnv.put(Context.SECURITY_PRINCIPAL, conf.getSECURITY_PRINCIPAL());
-		      ldapEnv.put(Context.SECURITY_CREDENTIALS, conf.getSECURITY_PRINCIPAL());
-		      ldapEnv.put(Context.SECURITY_PROTOCOL, conf.getSECURITY_PROTOCOL());
-		      searchBase=conf.getSEARCH_BASE();
+		      Hashtable<String, String> ldapEnv = new Hashtable<String, String>(11)									;
+		      ldapEnv.put(Context.INITIAL_CONTEXT_FACTORY, conf.getINITIAL_CONTEXT_FACTORY().toString().trim())		;
+		      ldapEnv.put(Context.PROVIDER_URL,  conf.getPROVIDER_URL().toString().trim())							;
+		      ldapEnv.put(Context.SECURITY_AUTHENTICATION, conf.getSECURITY_AUTHENTICATION().toString().trim())		;
+		      ldapEnv.put(Context.SECURITY_PRINCIPAL, conf.getSECURITY_PRINCIPAL().toString().trim())				;
+		      ldapEnv.put(Context.SECURITY_CREDENTIALS, conf.getSECURITY_PRINCIPAL().toString().trim())				;
+		      ldapEnv.put(Context.SECURITY_PROTOCOL, conf.getSECURITY_PROTOCOL().toString().trim())					;
+		      searchBase=conf.getSEARCH_BASE().toString().trim()													;
 		      
 		      ldapContext = new InitialDirContext(ldapEnv);
 		      System.out.println("Successfully conneted to AD");
