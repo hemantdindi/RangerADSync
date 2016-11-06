@@ -11,7 +11,6 @@ public class RangerUserGroupADSync {
 
 		// TODO Auto-generated method stub
 		Connection connection = null;
-		/*---------------------------------------------------------------------------------------------------------------------------------*/
 		ReadProperties conf = new ReadProperties();
 		DbUtil db_obj = new DbUtil();
 		System.out.println(conf.toString());
@@ -20,7 +19,6 @@ public class RangerUserGroupADSync {
 			System.out.println("Unknown error while establishing connection to Ranger DB");
 			System.exit(-1);
 		}
-		/*---------------------------------------------------------------------------------------------------------------------------------*/
 		
 		System.out.println("Format accepted : users=[\"user1\",\"user2\"] groups=[\"group1\",\"group2\"] ");
 		

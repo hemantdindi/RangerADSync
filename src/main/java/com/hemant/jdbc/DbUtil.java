@@ -37,4 +37,14 @@ public class DbUtil {
             } 
             return connection;        
     }
+    
+    public void closeConnection(Connection connection){
+    	try{
+    		connection.close();
+    	} catch (Exception e){
+    		e.printStackTrace();
+            System.out.println("Error while closing Ranger DB Connection");
+            System.exit(-1);
+    	}
+    }
 }
