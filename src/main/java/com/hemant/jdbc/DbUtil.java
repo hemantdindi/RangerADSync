@@ -14,6 +14,7 @@ import java.time.ZoneOffset;
 public class DbUtil {
 	private Connection connection = null;
 	
+	
     public Connection getConnection(ReadProperties conf) {
             try {
                 
