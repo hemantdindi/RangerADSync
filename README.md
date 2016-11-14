@@ -24,9 +24,8 @@ jar -cvfm RangerADSync.jar manifest.txt com/hemant/ranger/*.class com/hemant/jdb
 ```
 java -jar RangerADSync.jar  usersFile groupsFile 
 ```
-
+-------------
 Coding in progress
-
- Currently working on adding logging mechanism using log4j
+Currently working on adding logging mechanism using log4j
 
 
