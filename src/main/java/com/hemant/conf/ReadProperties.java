@@ -167,13 +167,6 @@ public class ReadProperties {
 				+ ",\n RANGER_DB_USER=" + RANGER_DB_USER + ",\n RANGER_DB_PWD=" + RANGER_DB_PWD + "\n ]";
 	}
 
-	public String toString2() {
-		return "ReadProperties [\n INITIAL_CONTEXT_FACTORY=" + INITIAL_CONTEXT_FACTORY + ",\n PROVIDER_URL=" + PROVIDER_URL
-				+ ",\n SECURITY_AUTHENTICATION=" + SECURITY_AUTHENTICATION + ",\n SECURITY_PRINCIPAL=" + SECURITY_PRINCIPAL
-				+ ",\n SECURITY_CREDENTIALS=" + SECURITY_CREDENTIALS + ",\n SECURITY_PROTOCOL=" + SECURITY_PROTOCOL
-				+ ",\n SEARCH_BASE=" + SEARCH_BASE + "\n]";
-	}
-	
-	   
+ 
 
 }
