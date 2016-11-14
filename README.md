@@ -14,6 +14,11 @@ A minor change in Ranger DB Schema. Add an index to x_group table of Ranger DB.
 ALTER TABLE ONLY x_group    ADD CONSTRAINT x_group_uk_group_name UNIQUE (group_name);
 ```
 --------------
+#Build Jar
+```
+javac -cp ./lib/postgresql*.jar com/hemant/ranger/*.java com/hemant/jdbc/DbUtil.java com/hemant/conf/ReadProperties.java
+jar -cvfm RangerADSync.jar manifest.txt com/hemant/ranger/*.class com/hemant/jdbc/DbUtil.class com/hemant/conf/ReadProperties.class
+```
 #Usage
 
 ```
