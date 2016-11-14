@@ -9,8 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.sql.Connection;
-
 
 public class RangerADSync {
 	
@@ -18,13 +16,13 @@ public class RangerADSync {
 
 		// TODO Auto-generated method stub
 		System.out.println("\n|--------------------------------------------------------------------------------------------------------------------|");
-		System.out.println("| DBDP Tool : RangerADSync                                                                                           |");
+		System.out.println("| Tool      : RangerADSync                                                                                           |");
 		System.out.println("| Version   : 1.0                                                                                                    |");
 		System.out.println("| Date      : 08/11/2016                                                                                             |");		
 		System.out.println("|--------------------------------------------------------------------------------------------------------------------|");
-		System.out.println("|                                      apac                                                                          |");
-		System.out.println("| Usages : java -jar RangerADSync.jar  emea     usersFile groupsFile                                                 |");
-		System.out.println("|                                      americas                                                                      |");
+		System.out.println("|                                                                                                                    |");
+		System.out.println("| Usages : java -jar RangerADSync.jar  usersFile groupsFile                                                          |");
+		System.out.println("|                                                                                                                    |");
 		System.out.println("|--------------------------------------------------------------------------------------------------------------------|\n");
 
 		if(args.length == 0 || args.length > 2) {
