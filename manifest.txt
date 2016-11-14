@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: com.hemant.ranger.RangerADSync
+Class-Path: lib/postgresql-9.4.1210.jre7.jar
+Name: Custom RangerADSync
+Sealed: true
+Specification-Title: "Hemant-RangerADSync" 
+Specification-Version: "1.0"
+Created-By: Hemant Kumar Dindi
