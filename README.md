@@ -10,8 +10,10 @@ This is what exactly RangerADSync fixes. RangerADSync sync's only the users and 
 -------------
 
 A minor change in Ranger DB Schema. Add an index to x_group table of Ranger DB.
-
+```
 ALTER TABLE ONLY x_group    ADD CONSTRAINT x_group_uk_group_name UNIQUE (group_name);
+```
+--------------
 
 Coding in progress
 
